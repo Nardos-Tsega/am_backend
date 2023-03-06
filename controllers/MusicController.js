@@ -7,10 +7,10 @@ const getMusicList = async (req, res) => {
 
 const addMusic = async (req, res) => {
   const music = new Music({
-    title: req.body.title,
-    artist: req.body.artist,
-    album: req.body.album,
-    genre: req.body.genre,
+    'title': req.body.title,
+    'artist': req.body.artist,
+    'album': req.body.album,
+    'genre': req.body.genre,
   });
 
   await music.save();
