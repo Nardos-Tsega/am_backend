@@ -36,7 +36,7 @@ const deleteMusic = async (req, res) => {
 
     res.json({ message: "Song deleted successfully" });
   } catch (error) {
-    res.status(500).json({ error: "Internal server error" });
+    res.json({ error });
   }
 };
 
@@ -47,8 +47,7 @@ const updateMusic = async (req, res) => {
         res.send(updatedSong);
       })
       .catch((err) => {
-        console.error(err);
-        res.status(500).send("Error updating song");
+        res.json("Error updating song");
       });
   } catch (error) {
     res.json({ error });
